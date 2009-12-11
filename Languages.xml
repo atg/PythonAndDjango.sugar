@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings>
+
+	<language id="net.fileability.sugars.python">
+		<syntax-zone>sourcecode.python</syntax-zone>
+		<root-zone>sourcecode.python</root-zone>
+		<name>Python</name>
+		<detectors>
+			<extension casesensitive="false">py</extension>
+			<match-content lines="1">^#![\w\/ ]*?python$</match-content>
+		</detectors>
+	</language>
+
+	<meta>
+		<name>Python</name>
+		<description>A sugar for doing development in the Python programming language.</description>
+		<author>##Espresso</author>
+		<identifier>net.fileability.sugars.python</identifier>
+		<version status="preview">1</version>
+		<download format="git">git://github.com/fileability/EspressoPython.sugar.git</download>
+		<url>http://github.com/fileability/EspressoPython.sugar</url>
+		<dependencies>
+			<dependency id="name.elliottcable.Sugar.Regex">Regex</dependency>
+		</dependencies>
+	</meta>
+</settings>

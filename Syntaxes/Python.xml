@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syntax name="sourcecode.python">
+	<zones>
+		<zone name="invalid">
+			<expression>\b(class|def)\s[^\:]*?$</expression>
+		</zone>
+
+		<zone name="string.quoted.single">
+			<starts-with>
+				<expression>(u?)([\']{3})</expression>
+				<capture number="1" name="punctuation.definition.modifier"/>
+				<capture number="2" name="punctuation.string.begin"/>
+			</starts-with>
+			<ends-with>
+				<expression>([\']{3})</expression>
+				<capture number="1" name="punctuation.string.end"/>
+			</ends-with>
+			<subzones>
+				<zone name="escape">
+					<expression>((\%[sdif])|(\\))</expression>
+					<capture number="2" name="character"/>
+					<capture number="3" name="literal.character.escape.backslash"/>
+				</zone>
+			</subzones>
+		</zone>
+
+		<zone name="string.quoted.double">
+			<starts-with>
+				<expression>(u?)([\"]{3})</expression>
+				<capture number="1" name="punctuation.definition.modifier"/>
+				<capture number="2" name="punctuation.string.begin"/>
+			</starts-with>
+			<ends-with>
+				<expression>([\"]{3})</expression>
+				<capture number="1" name="punctuation.string.end"/>
+			</ends-with>
+			<subzones>
+				<zone name="escape">
+					<expression>((\%[sdif])|(\\))</expression>
+					<capture number="2" name="character"/>
+					<capture number="3" name="literal.character.escape.backslash"/>
+				</zone>
+			</subzones>
+		</zone>
+
+		<zone name="string.quoted.regex">
+			<starts-with>
+				<expression>(r)(\'|\")</expression>
+				<capture number="1" name="punctuation.definition.modifier"/>
+				<capture number="2" name="punctuation.string.begin"/>
+			</starts-with>
+			<ends-with>
+				<expression>(\'|\")</expression>
+				<capture number="1" name="punctuation.string.end"/>
+			</ends-with>
+			<subzones>
+				<include syntax="expression.regex" />
+			</subzones>
+		</zone>
+
+		<zone name="string.quoted.single">
+			<starts-with>
+				<expression>(u?)(\')</expression>
+				<capture number="1" name="punctuation.definition.modifier"/>
+				<capture number="2" name="punctuation.string.begin"/>
+			</starts-with>
+			<ends-with>
+				<expression>(\')</expression>
+				<capture number="1" name="punctuation.string.end"/>
+			</ends-with>
+			<subzones>
+				<zone name="escape">
+					<expression>((\%[sdif])|(\\))</expression>
+					<capture number="2" name="character"/>
+					<capture number="3" name="literal.character.escape.backslash"/>
+				</zone>
+			</subzones>
+		</zone>
+
+		<zone name="string.quoted.double">
+			<starts-with>
+				<expression>(u?)(\")</expression>
+				<capture number="1" name="punctuation.definition.modifier"/>
+				<capture number="2" name="punctuation.string.begin"/>
+			</starts-with>
+			<ends-with>
+				<expression>(\")</expression>
+				<capture number="1" name="punctuation.string.end"/>
+			</ends-with>
+			<subzones>
+				<zone name="escape">
+					<expression>((\%[sdif])|(\\))</expression>
+					<capture number="2" name="character"/>
+					<capture number="3" name="literal.character.escape.backslash"/>
+				</zone>
+			</subzones>
+		</zone>
+
+		<zone name="at-rule.import">
+			<starts-with>^(?=from|import)</starts-with>
+			<ends-with>$</ends-with>
+			<subzones>
+				<include collection="import" />
+				<include collection="punctuation" />
+			</subzones>
+		</zone>
+
+		<zone name="comment">
+			<starts-with>
+				<expression>(#)</expression>
+				<capture number="1" name="punctuation.comment.begin"/>
+			</starts-with>
+			<ends-with>$</ends-with>
+			<subzones>
+				<zone name="shebang">
+					<expression>(\!.*?python)</expression>
+				</zone>
+				<zone name="text">
+					<expression>.*?</expression>
+				</zone>
+			</subzones>
+		</zone>
+		
+		<zone name="meta.class">
+			<starts-with>
+				<expression>(class)\s([\w\_]+)(\(){0,1}</expression>
+				<capture number="1" name="keyword.other"/>
+				<capture number="2" name="selector.css.name"/>
+				<capture number="3" name="punctuation.definition.open" />
+			</starts-with>
+			<ends-with>
+				<expression>(\)){0,1}(\:)$</expression>
+				<capture number="1" name="punctuation.definition.close" />
+				<capture number="2" name="punctuation.definition.begin" />
+			</ends-with>
+			<subzones>
+				<include collection="parameter-list"/>
+			</subzones>
+		</zone>
+
+		<zone name="support.function">
+			<starts-with>
+				<expression>\b(def)\s([\w\_]+)(\(){0,1}</expression>
+				<capture number="1" name="keyword.other"/>
+				<capture number="2" name="selector.css.name"/>
+				<capture number="3" name="punctuation.definition.open" />
+			</starts-with>
+			<ends-with>
+				<expression>(\)){0,1}(\:)$</expression>
+				<capture number="1" name="punctuation.definition.close" />
+				<capture number="2" name="punctuation.definition.begin" />
+			</ends-with>
+			<subzones>
+				<include collection="parameter-list"/>
+			</subzones>
+		</zone>
+		
+		<zone name="tag.open">
+			<expression>([a-zA-Z_]+|\s+)(\s*?(\=)\s*){0,1}((\()|(\[)|(\{))</expression>
+			<capture number="1" name="variable.name"/>
+			<capture number="2" name="keyword.operator"/>
+			<capture number="4" name="punctuation.definition.begin"/>
+			<capture number="5" name="punctuation.definition.open.round"/>
+			<capture number="6" name="punctuation.definition.open.square"/>
+			<capture number="7" name="punctuation.definition.open.curly"/>
+		</zone>
+
+		<zone name="tag.close">
+			<expression>(\))|(\])|(\})</expression>
+			<capture number="0" name="punctuation.definition.end"/>
+			<capture number="1" name="punctuation.definition.close.round"/>
+			<capture number="1" name="punctuation.definition.close.square"/>
+			<capture number="1" name="punctuation.definition.close.curly"/>
+		</zone>
+
+		<zone name="tag">
+			<expression>([a-zA-Z_][a-zA-Z_0-9\.]*?)\s*?(\=)</expression>
+			<capture number="1" name="name"/>
+			<capture number="2" name="operator"/>
+		</zone>
+
+		<zone name="keyword.other">
+			<expression>\b(object|property|super|class|def|self)\b</expression>
+		</zone>
+
+		<zone name="keyword.control">
+			<expression>\b(try|except|break|continue|elif|else|finally|for|if|import|from|return|switch|raise|while)\b</expression>
+		</zone>
+
+		<zone name="keyword.operator">
+			<expression>!|\$|%|&amp;|\*|\-\-|\-|\+\+|\+|~|===|==|=|!=|!==|&lt;=|>=|&lt;&lt;=|>>=|>>>=|&lt;>|&lt;|>|!|&amp;&amp;|\|\||\?\:|\*=|/=|%=|\+=|\-=|&amp;=|\^=|\b(in|type|is|del|and|or)\b</expression>
+		</zone>
+
+		<zone name="constant.numeric">
+			<expression>\b((0(x|X)[0-9a-fA-F]+)|([0-9]+(\.[0-9]+)?))\b</expression>
+		</zone>
+
+		<include collection="constant.language"/>
+	</zones>
+
+	<library>
+		<collection name="punctuation">
+			<zone name="punctuation.defintion.separator">
+				<expression>,</expression>
+			</zone>
+			<zone name="punctuation.defintion.accessor">
+				<expression>\.</expression>
+			</zone>
+			<zone name="punctuation.defintion.begin">
+				<expression>:</expression>
+			</zone>
+			<zone name="punctuation.defintion.end">
+				<expression>\;</expression>
+			</zone>
+			<zone name="punctuation.defintion.open">
+				<expression>(\{)|(\()|(\[)</expression>
+				<capture number="1" name="curly"/>
+				<capture number="2" name="round"/>
+				<capture number="3" name="square"/>
+			</zone>
+			<zone name="punctuation.defintion.close">
+				<expression>(\})|(\))|(\])</expression>
+				<capture number="1" name="curly"/>
+				<capture number="2" name="round"/>
+				<capture number="3" name="square"/>
+			</zone>
+		</collection>
+
+		<collection name="import">
+			<zone name="keyword.control">
+				<expression>\b(from|import|as)\b</expression>
+			</zone>
+			<zone name="variable.name">
+				<expression>\*|\w+</expression>
+			</zone>
+		</collection>
+
+		<collection name="parameter-list">
+			<zone name="keyword.other">
+				<expression>\b((object)|(klass)|(self))\b</expression>
+				<capture number="2" name="class-reference"/>
+				<capture number="3" name="class-reference"/>
+				<capture number="4" name="class-reference"/>
+			</zone>
+			<zone name="variable.name">
+				<expression>\w+</expression>
+			</zone>
+			<include collection="punctuation"/>
+			<include syntax="keyword.operator"/>
+		</collection>
+
+		<collection name="constant.language">
+			<zone name="keyword.other">
+				<expression>\b(True)|(False)|(None)|(Exception|range|xrange)\b</expression>
+				<capture number="1" name="boolean.true" />
+				<capture number="2" name="boolean.false" />
+				<capture number="3" name="null" />
+				<capture number="4" name="language" />
+			</zone>
+		</collection>
+	</library>
+</syntax>
