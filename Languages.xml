@@ -11,6 +11,16 @@
 			<match-content lines="1">^#![\w\/ ]*?python$</match-content>
 		</detectors>
 	</language>
+	
+	<language id="net.fileability.sugars.django">
+		<syntax-zone>sourcecode.django</syntax-zone>
+		<root-zone>sourcecode.django</root-zone>
+		<name>Django</name>
+		<detectors>
+			<extension casesensitive="false">py</extension>
+			<match-content lines="10">^(from|import)\s*django</match-content>
+		</detectors>
+	</language>
 
 	<meta>
 		<name>Python</name>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syntax name="sourcecode.django">
+	<zones>
+		<include syntax="sourcecode.python"/>
+		
+		<zone name="keyword.other">
+			<expression>\b(HttpResponse)\b</expression>
+		</zone>
+	</zones>
+
+	<library>
+	</library>
+</syntax>
