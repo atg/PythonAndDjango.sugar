@@ -121,15 +121,16 @@
 			</subzones>
 		</zone>
 		
-		<zone name="meta.class">
+		
+		<zone name="meta.decorator.py">
 			<starts-with>
-				<expression>(class)\s([\w\_]+)(\(){0,1}</expression>
+				<expression>\b(@)\s*([\w\_]+)(\()?</expression>
 				<capture number="1" name="keyword.other"/>
-				<capture number="2" name="selector.css.name"/>
+				<capture number="2" name="name"/>
 				<capture number="3" name="punctuation.definition.open" />
 			</starts-with>
 			<ends-with>
-				<expression>(\)){0,1}(\:)$</expression>
+				<expression>(\))?(\:)?$</expression>
 				<capture number="1" name="punctuation.definition.close" />
 				<capture number="2" name="punctuation.definition.begin" />
 			</ends-with>
@@ -137,16 +138,33 @@
 				<include collection="parameter-list"/>
 			</subzones>
 		</zone>
-
-		<zone name="support.function">
+		
+		<zone name="meta.class.py">
 			<starts-with>
-				<expression>\b(def)\s([\w\_]+)(\(){0,1}</expression>
+				<expression>\b(class)\s([\w\_]+)(\()?</expression>
 				<capture number="1" name="keyword.other"/>
-				<capture number="2" name="selector.css.name"/>
+				<capture number="2" name="name"/>
 				<capture number="3" name="punctuation.definition.open" />
 			</starts-with>
 			<ends-with>
-				<expression>(\)){0,1}(\:)$</expression>
+				<expression>(\))?(\:)?$</expression>
+				<capture number="1" name="punctuation.definition.close" />
+				<capture number="2" name="punctuation.definition.begin" />
+			</ends-with>
+			<subzones>
+				<include collection="parameter-list"/>
+			</subzones>
+		</zone>
+		
+		<zone name="function.py">
+			<starts-with>
+				<expression>\b(def)\s([\w\_]+)(\()?</expression>
+				<capture number="1" name="keyword.other"/>
+				<capture number="2" name="name"/>
+				<capture number="3" name="punctuation.definition.open" />
+			</starts-with>
+			<ends-with>
+				<expression>(\))?(\:)?$</expression>
 				<capture number="1" name="punctuation.definition.close" />
 				<capture number="2" name="punctuation.definition.begin" />
 			</ends-with>

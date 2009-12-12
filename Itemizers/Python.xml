@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itemizer>
+	
+	<recipe name="function.python">
+		<selector>function.py:has-child(name:capture(name))</selector>
+	</recipe>
+	
+	<recipe name="meta.class.python">
+		<selector>meta.class.py:has-child(name:capture(name))</selector>
+	</recipe>
+
+	
+</itemizer>
