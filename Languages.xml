@@ -17,11 +17,22 @@
 		<root-zone>sourcecode.django</root-zone>
 		<name>Django</name>
 		<detectors>
-			<extension casesensitive="false">py</extension>
-			<match-content lines="10">^(from|import)\s*django</match-content>
+			<combo>
+				<extension casesensitive="false">py</extension>
+				<match-content lines="10">^(from|import)\s*django</match-content>
+			</combo>
 		</detectors>
 	</language>
-
+	
+	<language id="net.fileability.sugars.django-template">
+		<syntax-zone>sourcecode.django-template</syntax-zone>
+		<root-zone>sourcecode.django-template</root-zone>
+		<name>Django Template</name>
+		<detectors>
+			<match-content lines="10">(\{\{|\{\%|\{\#)</match-content>
+		</detectors>
+	</language>
+	
 	<meta>
 		<name>Python</name>
 		<description>A sugar for doing development in the Python programming language.</description>
