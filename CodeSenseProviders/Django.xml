@@ -2,7 +2,7 @@
 
 <codesense>
 	<provider>
-		<selector>*:not(string)</selector>
+		<selector>sourcecode.django:not(string)</selector>
 		<completions>django.modules.all</completions>
 		<complete-match>[\w\.]+</complete-match>
 	</provider>
