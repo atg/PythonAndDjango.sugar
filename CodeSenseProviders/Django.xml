@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<codesense>
+	<provider>
+		<selector>*:not(string)</selector>
+		<completions>django.modules.all</completions>
+		<complete-match>[\w\.]+</complete-match>
+	</provider>
+</codesense>
