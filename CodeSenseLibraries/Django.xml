@@ -171,7 +171,50 @@
 		<completion string="django.views.static" />
 		<completion string="views.static" />
 		<completion string="static" />
+		<completion string="AutoField" />
 		
+		<completion string="BooleanField" />
+		<completion string="CharField" />
+		<completion string="CommaSeparatedIntegerField" />
+		<completion string="DateField" />
+		<completion string="DateTimeField" />
+		<completion string="DecimalField" />
+		<completion string="EmailField" />
+		<completion string="FilePathField" />
+		<completion string="FloatField" />
+		<completion string="IntegerField" />
+		<completion string="IPAddressField" />
+		<completion string="NullBooleanField" />
+		<completion string="PositiveIntegerField" />
+		<completion string="PositiveSmallIntegerField" />
+		<completion string="SlugField" />
+		<completion string="SmallIntegerField" />
+		<completion string="TextField" />
+		<completion string="TimeField" />
+		<completion string="URLField" />
+		<completion string="XMLField" />
+		
+		<completion string="models.AutoField" />
+		<completion string="models.BooleanField" />
+		<completion string="models.CharField" />
+		<completion string="models.CommaSeparatedIntegerField" />
+		<completion string="models.DateField" />
+		<completion string="models.DateTimeField" />
+		<completion string="models.DecimalField" />
+		<completion string="models.EmailField" />
+		<completion string="models.FilePathField" />
+		<completion string="models.FloatField" />
+		<completion string="models.IntegerField" />
+		<completion string="models.IPAddressField" />
+		<completion string="models.NullBooleanField" />
+		<completion string="models.PositiveIntegerField" />
+		<completion string="models.PositiveSmallIntegerField" />
+		<completion string="models.SlugField" />
+		<completion string="models.SmallIntegerField" />
+		<completion string="models.TextField" />
+		<completion string="models.TimeField" />
+		<completion string="models.URLField" />
+		<completion string="models.XMLField" />
 	</set>
 
 </codesense>
