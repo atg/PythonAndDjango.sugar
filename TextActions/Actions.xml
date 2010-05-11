@@ -1,0 +1,384 @@
+<?xml version="1.0"?>
+<action-recipes>
+
+    <action id="com.pixelbloom.DjangoTemplates.TextActions.AutoEscape" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>autoescape</title>
+		<text-trigger>autoescape</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% autoescape ${2:on}${3:off} %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+	
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.Block" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>block</title>
+		<text-trigger>block</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% block $1 %}
+    $2
+{% endblock $3 %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+	
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.Comment" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>comment</title>
+		<text-trigger>comment</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% comment %} ${1:...} {% endcomment %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+
+    <action id="com.pixelbloom.DjangoTemplates.TextActions.Csrf" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>csrf</title>
+		<text-trigger>csrf</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% csrf_token %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+	
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.Cycle" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>cycle</title>
+		<text-trigger>cycle</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% cycle ${1:rowvalue1} ${3:etc} %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+	
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.Debug" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>debug</title>
+		<text-trigger>debug</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% debug %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+	
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.Extends" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>extends</title>
+		<text-trigger>extends</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% extends "${1:base.html}" %}
+    $2
+{% extends %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+	
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.Filter" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>filter</title>
+		<text-trigger>filter</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% filter ${1:force_escape|lower} %}
+    $2
+{% filter %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+	
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.Firstof" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>firstof</title>
+		<text-trigger>firstof</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% firstof ${1:var1}${1: var2}${1: etc} } %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+	
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.For" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>for</title>
+		<text-trigger>for</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% for ${1:x}${2:, y} in ${3:var} %}
+    $4
+{% endfor %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+	
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.Empty" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>empty</title>
+		<text-trigger>empty</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% empty %}
+    $0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.If" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>if</title>
+		<text-trigger>if</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% if ${1:var} %}
+    $2
+{% endif %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+	
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.Ifchanged" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>ifchanged</title>
+		<text-trigger>ifchanged</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% ifchanged ${1:var}%}
+    $2
+{% endifchanged %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+	
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.Ifequal" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>ifequal</title>
+		<text-trigger>ifequal</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% ifequal ${1:var1} ${1:var2} %}
+    $2
+{% endifequal %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+	
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.Else" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>else</title>
+		<text-trigger>else</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% else %}
+    $0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+	
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.Ifnotequal" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>ifnotequal</title>
+		<text-trigger>ifnotequal</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% ifnotequal ${1:var1} ${1:var2} %}
+    $2
+{% ifnotequal %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+	
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.load" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>load</title>
+		<text-trigger>load</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% load ${1:library} %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+	
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.now" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>now</title>
+		<text-trigger>now</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% now "${1:jS F Y H:i}" %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+	
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.regroup" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>regroup</title>
+		<text-trigger>regroup</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% regroup ${1:var} by ${2:attr} as ${3:new_var} %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+	
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.spaceless" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>spaceless</title>
+		<text-trigger>spaceless</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% spaceless %}$1{% endspaceless %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+    
+    <action id="com.pixelbloom.DjangoTemplates.TextActions.templatetag" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>templatetag</title>
+		<text-trigger>templatetag</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% templatetag %}$1{% endtemplatetag %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+    
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.Url" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>url</title>
+		<text-trigger>url</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% url ${1:package.module.view_fn} ${2:value1,kwarg=value2}${2: as the_url} %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+	
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.Widthratio" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>widthratio</title>
+		<text-trigger>widthratio</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% widthratio ${1:value} ${2:max_value} ${3:100} %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+	
+	<action id="com.pixelbloom.DjangoTemplates.TextActions.With" category="actions.text.DjangoTemplates/actions.text.generic">
+		<class>TEAforEspresso</class>
+		<title>with</title>
+		<text-trigger>with</text-trigger>
+		<setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string>{% with ${1:var1} as ${2:var2} %}
+    $3
+{% endwith %}$0</string>
+                </dict>
+            </options>
+        </setup>
+	</action>
+
+</action-recipes>

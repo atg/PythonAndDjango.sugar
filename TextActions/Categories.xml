@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<action-categories>
+	<!-- Generic categories -->
+	<category id="actions.text.Django" show="sub">
+		<title>Django</title>
+	</category>
+	<category id="actions.text.DjangoTemplates" show="sub">
+		<title>Django Templates</title>
+	</category>
+</action-categories>
