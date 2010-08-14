@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings>
+
+	<setting name="comment-singleline-start">
+		<syntax-context>sourcecode.django</syntax-context>
+		<value>#</value>
+	</setting>
+	
+</settings>
